@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Great+Vibes|Kaushan+Script|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Great+Vibes|Kaushan+Script|Lobster|Pacifico" rel="stylesheet">
+    <style>
+    .bg-black
+    {
+        background-color: black;
+    }
+    *
+    {
+        font-size: 16px;
+    }
+    .margin-5
+    {
+        margin-left:40vw;
+        border: 1px solid white;  
+    }
+    .myvideo
+    {
+    position: relative;
+    top: 0;
+    left: 0;
+    top: 0;
+    bottom:0;
+    width: 100%; 
+    height: 100%;
+    width: auto;
+    height: auto;
+    transform: scaleX(1) scaleY(2.2); 
+    overflow: hidden;
+    transform-origin: right center ;
+    
+        
+    }
+  
+    .div1
+    {
+        position:relative;
+        overflow: hidden;
+        transform: translateY(-58px);
+        height: 100vh;
+        z-index: 0;
+    }
+    nav
+    {
+        z-index: 5;
+        background: transparent; 
+    }
+    @media only screen and (max-width:992px)
+    {
+        nav
+        {
+            background-color: black;
+        }
+        #mymenu ul li a
+        {
+            border-bottom: none;
+        }
+        .margin-5
+        {
+            margin-left:15px;
+            padding: 0;
+            border: 0px solid white;  
+        }
+    }
+    .div1-1
+    {
+        background: linear-gradient(to right top, rgba(108, 142, 192, 0.9),20%, rgba(1, 22, 56, 0.9));
+        /* transform: translateY(-58px); */
+        /* height: 100vh; */
+        
+    }
+    #divBorder 
+    {
+        height: 340px;
+        width: 800px;
+        position: absolute;
+        top: 0;
+        
+        margin:10px;
+        margin-left: 20%;
+        /* display: none; */
+        z-index: 3 ;
+    } 
+   
+    @media screen and (max-width:768px)
+    {
+        #divBorder
+        {
+            width: 90%;
+            margin-left: 20%;
+        }
+    }
+    @media screen and (max-width: 576px)
+    {
+        #divBorder
+        {
+            margin-left:120px;
+            /* width: 100%; */
+        }
+    }
+    #divBorder:before {
+        content: '';
+        position: absolute;
+        top:100px;
+        left:-100px;
+        width:0%;
+        height:0%;
+        background: transparent;
+        border: 2px solid cyan;
+        animation: animate3 2s linear forwards;
+    }
+    @keyframes animate3
+    {
+    0%
+    {
+        width: 0;
+        height:0;
+        border-top-color: cyan;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+
+    }
+    25%
+    {
+        width: 100%;
+        height:0;
+        border-top-color: cyan;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+
+    }
+    50%
+    {
+        width: 100%;
+        height:100%;
+        border-top-color: cyan;
+        border-right-color: cyan;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+
+    }
+    75%
+    {
+        width: 100%;
+        height:100%;
+        border-top-color: cyan;
+        border-right-color: cyan;
+        border-bottom-color: cyan;
+        border-left-color: transparent;
+
+    }
+   100%
+    {
+        width: 100%;
+        height:100%;
+        border-top-color: cyan;
+        border-right-color: cyan;
+        border-bottom-color: cyan;
+        border-left-color: transparent;
+    }
+    
+    }
+    #container {
+    /* text-align: center; */
+    margin-top: 27%;
+    transform: translateX(-100px);
+    /* font-size: 100px; */
+}
+
+#text {
+	display: inline-block;
+	vertical-align: middle;
+	color: white;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+#cursor {
+	display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+	height: 50px;
+	background-color: orange;
+	animation: blink 0.4s step-end infinite;
+}
+
+@keyframes blink 
+{
+    from, to 
+    { 
+		background-color: transparent 
+	}
+	50% { 
+		background-color: white; 
+	}
+}
+
+ul > li > a
+{
+    font-size: 10px;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+}
+#text1
+{
+    color: rgb(250, 250, 250);
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+}
+#F_ltr
+{
+    color: rgb(250, 250, 250);
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+    animation: animate1 1.6s all ;
+}
+@keyframes animate1
+{
+    0%
+    {
+        transform: translateX(-50px);
+    }
+    100%
+    {
+        transform: translateX(50px);
+    }
+}
+.div1-1
+{
+    width: 55%;
+    animation-name: animate5;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+@keyframes animate5
+{
+    from
+    {
+        width: 100%;
+    }
+    to
+    {
+        width:55%;
+    }
+}
+.div1-2
+{
+    width: 45%;
+    animation-name: animate6;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+@keyframes animate6
+{
+    from
+    {
+        width: 0%;
+    }
+    to
+    {
+        width: 45%;
+    }
+}
+.sec1
+{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(1, 22, 56);
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+
+}
+#mymenu ul li a
+{
+    /* border-left: 2px solid white; */
+    /* border-bottom: 2px solid white; */
+    cursor: pointer;
+}
+.animate_1
+{
+    animation-name: animate7;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+}
+@keyframes animate7
+{
+    from
+    {
+        border-bottom: 0px;
+        
+    }
+    to 
+    {
+        border-bottom: 2px solid white;
+        color: red;
+    }
+}
+#mymenu ul li a:hover
+{
+    border-bottom: 2px solid white;
+    /* transition: 1s; */
+}
+
+.sect2
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    bottom: 0;
+}
+
+/* ---------About Division------- */
+.div2
+{
+    background: url("./video/623549.jpg");
+    width: 100%;
+    min-height: 110vh;
+    background-repeat: no-repeat;
+    transform: translateY(-58px);
+    
+}
+.sec2
+{
+    width: 100%;
+    min-height: 110vh;
+    background-color: black;
+    opacity: 0.9;
+    
+}
+.div2 h1
+{
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    
+}
+.div2 h1 span
+{
+    color: cyan;
+    font-size: 45px;
+    line-height: 0px;
+}
+.horizontal1
+{
+    background-color: cyan;
+    width: 120px;
+    height: 2px;
+}
+
+#myphoto
+{
+    width: 70%;
+    height: 430px;
+    margin-left: 20%;
+}
+#para1
+{
+    color: rgb(173, 181, 196);
+    line-height: 30px;
+    
+}  
+#para1 span
+{
+    color: cyan;
+}
+@media only screen and (max-width:768px)
+{
+    #para1
+    {
+        margin: 30px;
+    }
+    #myphoto
+    {
+        margin-left: 15%;
+    }
+}
+.para1
+{
+    display: none;
+}
+.animatea
+{
+    animation-name: animate_a;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+@keyframes animate_a
+{
+    from
+    {
+       transform: translateY(50px); 
+    }
+    to 
+    {
+        transform: translateX(0px);
+    }
+}
+.my_details
+{
+    display: none;
+}
+.animateb
+{
+    animation-name: animate_a;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+.animatec
+{
+    animation-name: animate_c;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+@keyframes animate_c
+{
+    from
+    {
+        transform: scale3d(0.2,0.2,0.2);  
+    }
+    to 
+    {
+        transform:scale3d(1,1,1) ;
+    }
+}
+
+/* --------Skill page--------- */
+.div3
+{
+    background: url("./video/photo-of-man-using-laptop-3194523.jpg");
+    width: 100%;
+    min-height: 80vh;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    transform: translateY(-58px);
+    background-attachment: fixed;
+}
+.div3 h1
+{
+    color: white;
+    text-align:center;
+    font-size: 40px;
+}
+.div3 h1 span 
+{
+    color: cyan;
+    font-size: 40px;
+
+}
+.div3 .sec3
+{
+    background:linear-gradient(to right top, rgba(108, 142, 192, 0.9),20%, rgba(1, 22, 56, 0.9));;
+    opacity: 0.95;
+    width: 100%;
+    min-height: 80vh;
+}
+.div3 .sec3 span
+{
+    color: white;
+}
+.animated
+{
+    animation-name: animate_d;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+.animatee
+{
+    animation-name: animate_e;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+.animatef
+{
+    animation-name: animate_f;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+.animateg
+{
+    animation-name: animate_g;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+.animateh
+{
+    animation-name: animate_h;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+.animatei
+{
+    animation-name: animate_i;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+@keyframes animate_d
+{from{width: 0%;}to{width: 95%;}}
+@keyframes animate_e
+{from{width: 0%;}to{width: 90%;}}
+@keyframes animate_f
+{from{width: 0%;}to{width: 85%;}}
+@keyframes animate_g
+{from{width: 0%;}to{width: 80%;}}
+@keyframes animate_h
+{from{width: 0%;}to{width: 75%;}}
+@keyframes animate_i
+{from{width: 0%;}to{width: 85%;}}
+
+
+.flex-container
+{
+    display: flex;
+}
+
+/*-------- Portfoliopage------- */
+.div4
+{
+    background: url("./video/623549.jpg");
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    transform: translateY(-58px);
+    /* background-attachment: fixed; */
+    /* padding-bottom: 20px; */
+}
+.div4 h1
+{
+    color: white;
+    text-align:center;
+    font-size: 40px;
+}
+.div4 h1 span 
+{
+    color: cyan;
+    font-size: 40px;
+
+}
+.div4 .sec4
+{
+    background-color:rgba(0, 0, 0,0.9);
+    /* opacity: 0.92; */
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+.div4 .sec4 span
+{
+    color: white;
+}
+.div4 .section1 ul li
+{
+    display: inline-block;
+    padding: 5px 20px 5px 20px;
+    /* margin-left: 10px; */
+    margin-top: 10px;
+    list-style-type: none;
+    color: cyan;
+    border: 1px solid cyan;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+.div4 .container .section1
+{
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 70%; */
+    /* height: auto; */
+}
+.div4 .section1 ul li:hover, .active 
+{
+    background-color: cyan;
+    color: black;
+    transition: 0.6s;
+    font-weight: bold;
+    box-shadow: 0px 0px 150px 0px whitesmoke;
+    border-radius: 20px;
+}
+.div4 .section1 .active
+{
+    background-color: cyan;
+    color: black;
+    transition: 0.6s;
+    font-weight: bold;
+    box-shadow: 0px 0px 150px 0px whitesmoke;
+    border-radius: 20px;
+}
+.scale1
+{
+    animation-name:scale_1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes scale_1
+{
+    from
+    {
+        transform: scale3d(0.5,0.5,0.5);
+    }
+    to 
+    {
+        transform: scale3d(1,1,1);
+    }
+}
+.scale2
+{
+    animation-name:scale_2;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes scale_2
+{
+    from
+    {
+        transform: scale3d(1,1,1);
+    }
+    to 
+    {
+        transform: scale3d(0,0,0);
+    }
+}
+.div4 .row .col-md-4
+{
+    position: relative;
+    overflow: hidden;
+}
+.div4 .row .col-md-4 .overlay
+{
+    position: absolute;
+    width: 93%;
+    height: 250px;
+    left: 4%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.div4 .row .col-md-4 .overlay:hover
+{
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: 0.4s all;
+    transform: scale3d(0.9,0.9,0.9);
+}
+.div4 .row .col-md-4 img:hover
+{
+    transform: scale3d(1.3,1.3,1.3);
+    transition: 1s all;
+}
+.div4 .container2
+{
+    background-color:black;
+    padding-bottom: 20px;
+}
+.fa-search
+{
+    color: rgba(255, 255, 255, 0);
+    font-size: 25px;
+}
+.margin-20
+{
+    margin-left:45%;
+    margin-top: 25%;
+}
+.div4 .overlay p
+{
+    color: rgba(255, 255, 255, 0);
+    text-align: center;
+    line-height:8px;
+}
+/* ---------Service page---------- */
+.div5
+{
+    width: 100%;
+    min-height: 80vh;
+    background: url("./video/img3.jpg");
+    transform: translateY(-58px);
+    /* padding-bottom: 20px; */
+}
+.div5 .sec5
+{
+    background-color:rgba(4, 37, 90, 0.7);
+    width: 100%;
+    min-height: 80vh;
+    padding-bottom: 20px;
+}
+.div5 h1 span
+{
+    color: cyan;
+    text-align:center;
+    font-size: 40px;
+}
+.div5 h1
+{
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+.div5 .row .col-md-5 .section1,.section2
+{
+    width: 80%;
+    margin-left: 30%;
+    height: 45vh;
+    /* border: 1px solid cyan; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0,1);
+    border-radius: 10px;
+
+}
+.div5 .row .col-md-5 .section1:hover
+{
+    transform: translateY(-15px);
+    transition: 0.4s all ease-out;
+    box-shadow: 0px 0px 10px 0px cyan;   
+}
+.div5 .row .col-md-5 .section2:hover
+{
+    transform: translateY(-10px);
+    transition: 0.4s all ease-out;
+    box-shadow: 0px 0px 10px 0px cyan; 
+}
+
+@media only screen and (max-width:768px)
+{
+.div5 .row .col-md-5 .section1,.section2
+{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 20px;
+    
+}
+}
+.icon_div
+{
+    width: 80px;
+    height: 80px;
+    border: 5px solid cyan;
+    border-radius: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    
+}
+.icon_div img
+{
+    width: 50px;
+    height: 50px;
+}
+.div5 .row .col-md-5 h3
+{
+    color: rgb(254, 255, 255);
+    margin: 0;
+}
+.div6
+{
+    transform: translateY(-58px);
+}
+.div7
+{
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    min-height: 75vh;
+    transform: translateY(-58px);
+}
+.div7 #contact
+{
+    width: 100%;
+    height: 75vh;
+    background-color: rgb(0, 0, 0);
+    transform: translateY(-130px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+ #img1, #img2
+{
+    
+    height: 70px;
+    width: 150px;
+}
+#img1
+{
+    transform: translateY(-34px);
+    align-self: center;
+}
+#img2
+{
+    transform: translateY(34px);
+    align-self: center;
+}
+.div7 #adress1,#adress2
+{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 768px) 
+{
+.div7 #contact
+{
+    transform: translateY(0px);
+}
+}
+.div7 #contact h1
+{
+    text-align: center;
+    transform: translateY(-55px);
+    color: cyan;
+    font-family:'Kaushan Script', cursive ;
+}
+.div7 #contact #img3
+{
+    transform: translateY(-50px); 
+}
+.div7 #contact a 
+{
+    margin-left: 20px;
+    transform: translateY(-45px);
+}
+.div7 #contact input[type=text]
+{
+    background-color: black;
+    border: 1px dashed gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    color: gray;
+    padding-left: 0px;
+    margin-left: 20px;
+    width: 80%;
+    transform: translateY(-45px);
+}
+.div7 #contact textarea
+{
+    background-color: black;
+    border: 1px dashed gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    color: gray;
+    padding-left: 0px;
+    margin-left: 20px;
+    width: 80%;
+    transform: translateY(-55px);
+}
+.div7 #contact .btn
+{
+    border: 1px solid cyan;
+    color: cyan;
+    font-weight: bold;
+}
+.div7 #contact .btn:hover
+{
+    color: black;
+    font-weight: bold;
+    background-color: cyan;
+    transition: 0.9s all;
+}
+.div7 #adress1 h3
+{
+    color: White;
+    font-family:'Kaushan Script', cursive ;
+    /* margin-left: 20%; */
+    text-align: center;
+} 
+.div7 #adress1 p
+{
+    color: gray;
+  
+}
+.div7 #adress1 a 
+{
+    color: cyan;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.div7 #adress1 a:hover
+{
+    color: white;
+    transition: 0.6s all;
+}
+.div7 #adress1 
+{
+    padding: 5.5%;
+    text-align: center;
+}
+.div7 #adress2 h3
+{
+    color: White;
+    font-family:'Kaushan Script', cursive ;
+    /* margin-left: 20%; */
+    text-align: center;
+} 
+.div7 #adress2 p
+{
+    color: gray;
+  
+}
+.div7 #adress2 a 
+{
+    color: cyan;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.div7 #adress2 a:hover
+{
+    color: white;
+    transition: 0.6s all;
+}
+.div7 #adress2 
+{
+    padding: 5.5%;
+    text-align: center;
+}
+.div7 .row2
+{
+    display: flex;
+    flex-direction:row ;
+    justify-content:center;
+    transform: translateY(-60px);
+}
+.div7 .row .my-icon
+{
+    background-color: #000000;
+    /* display: inline; */
+    border-radius: 30px;
+    margin-left: 10px;
+   
+
+}
+.div7 .row .my-icon .p-3:hover 
+{
+    transform: rotate(360deg);
+    transition: 0.4s all;
+
+}
+.div8
+{
+    background-color:black;
+    width: 100%;
+    height: 100px;
+    transform: translateY(-58px);
+    display: flex;
+    justify-content: center;
+}
+.div8 #img3
+{
+    height: 70px;
+    width: 150px;
+    transform: translateY(-30px);
+}
+.mycv
+{
+    transition: 1s all ease;
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    text-transform: uppercase;
+    background:none;
+    border: 1px solid cyan;
+    font-size: 12px;
+    padding: 15px 20px 15px 20px;
+    cursor: pointer;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    text-decoration: none;
+}
+.mycv::before
+{
+    background: cyan;
+    content: "";
+    position:absolute;
+    left:91px;
+    top:23px;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    transform: translate(-50%, -50%) rotate(0deg) ;
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+.mycv1::before
+{
+    width:0;
+    height: 100%;
+}
+.mycv1:hover::before
+{
+    width: 100%;
+    /* color: black; */
+}
+.mycv:hover
+{
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+</style>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<body>
+        
+    <nav id="navbar" class="navbar navbar-dark navbar-expand-lg  p-0 sticky-top">
+        <a href="" class="navbar-brand ml-3"> <img src="./video/images.jpg" alt="" width="150px"></a>
+
+        <button type="button" class="navbar-toggler" data-target="#mymenu"  aria-controls="mymenu" data-toggle="collapse">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div id="mymenu" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav p-2">
+                <li class="nav-item ">
+                    <a href="" id="nav-link" class="nav-link ml-3 active">HOME</a>
+                </li>
+                <li class="nav-item">
+                       <a href="#div2" class="nav-link ml-3">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#div3" class="nav-link ml-3">SKILLS</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#div4" class="nav-link ml-3">PORTFOLIO</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#div5" class="nav-link ml-3">SERVICE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#div6" class="nav-link  pr-4 pt-2 pb-2 margin-5 rounded">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="div1 d-flex">
+        <div class="div1-1 d-none d-md-block">
+            
+        </div>
+        <div class="div1-2">
+            
+            <video autoplay muted loop class="myvideo">
+                <source src="./video/video.mp4">  
+                   
+            </video>
+            <section class="sec1 d-md-none"> 
+                
+            </section>
+            <section class="sect2"> 
+                <img src="./video/dots-pattern.png" alt="" width="100%" height="250px">
+            </section>
+            
+        </div>
+        
+       
+    </div>
+    <div id="divBorder">
+        <div id="container">
+            <div id="text1"><span id="F_ltr">S</span>ushant Kulkarni</div>
+            <div id="text"></div><div id="cursor"></div>
+           
+        </div>
+    </div>
+<div class="div2" id="div2">
+    <div class="sec2">
+        <h1 class="pt-5">ABOUT <span>ME</span></h1>
+        <hr class="horizontal1">
+        <div class="row mt-5">
+            <div class="col-md-5">
+                <img id="myphoto"  src="./video/sushant2.jpg" alt="">
+            </div>
+            <div class="col-md-7" id="para1">
+                <p class="para1">I am <span>SUSHANT KULKARNI</span> . I am a Front end web Developer in Bangalore, India. I am graduate Computer Application(BCA) at SSBCA degree collage Gokak,Karnataka and perceived Corporate Front End Web Developer training at WebStack Academy,Bangalore, Also enhancing knowledge and building designing & developement capabilities through day-to-day project experiences.</p>
+                <section class="my_details">
+                <span>AGE : </span> 25<br>
+                <Span>ADDRESS : </Span> Gokak, Karnataka<br>
+                <span>EMAIL : </span> sushantkulkarni44@gmail.com<br>
+                <span>PHONE : </span> +91-9113690491<br>
+                <span>GITHUB : </span> sushantkulkarni.github.io<br><br>
+                <a id="CV" class="mycv mycv1" href="./video/Sushant_CV.docx" download ><i class="fa fa-download"  ></i>  Download resume </a>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="div3" id="div3">
+    <div class="sec3">
+        <h1 class="pt-5">MY <span style="color: cyan;">SKILLS</span></h1>
+        <hr class="horizontal1"><br>    
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section1 ml-5" style="width: 80%; height: 25px;  display: inline-block;">
+                    <sec style="width:50%; height: 25px;  color: white; float: left;">HTML5</sec>
+                    <sec class="Count" style="width: 46%; height: 25px;  float: left; text-align: end; color: white;">95</sec>
+                    <sec style="float: left; color: white;">%</sec>
+                </div>
+                <div class="progress ml-5" style="width: 80%; height: 7px;background-color: black;">
+                    <div class="progress-bar progress-bar1 progress-bar-striped bg-info" style="width: 95%;">
+
+                    </div>
+                </div><br>
+                <div class="section1 ml-5" style="width: 80%; height: 25px;  display: inline-block;">
+                    <sec style="width:50%; height: 25px; color: white; float: left;">CSS3</sec>
+                    <sec class="Count" style="width: 46%; height: 25px;  float: left; text-align: end; color: white;">90</sec>
+                    <sec style="float: left; color: white;">%</sec>
+                </div>
+                <div class="progress ml-5" style="width: 80%; height: 7px;background-color: black; ">
+                    <div class="progress-bar progress-bar2 progress-bar-striped  bg-info" style="width: 90%;">
+
+                    </div>
+                </div><br>
+                <div class="section1 ml-5" style="width: 80%; height: 25px;  display: inline-block;">
+                    <sec style="width:50%; height: 25px; color: white; float: left;">Bootstrap 4</sec>
+                    <sec class="Count" style="width: 46%; height: 25px;  float: left; text-align: end; color: white;">85</sec>
+                    <sec style="float: left; color: white;">%</sec>
+                </div>
+                <div class="progress ml-5" style="width: 80%; height: 7px; background-color: black; ">
+                    <div class="progress-bar progress-bar3 progress-bar-striped bg-info" style="width: 85%;">
+
+                    </div>
+                </div><br>
+            </div>
+            <div class="col-md-6">
+                <div class="section1 ml-5" style="width: 80%; height: 25px;  display: inline-block;">
+                    <sec style="width:50%; height: 25px; color: white; float: left;">Javascript</sec>
+                    <sec class="Count" style="width: 46%; height: 25px;  float: left; text-align: end; color: white;">80</sec>
+                    <sec style="float: left; color: white;">%</sec>
+                </div>
+                <div class="progress ml-5" style="width: 80%; height: 7px; background-color: black; ">
+                    <div class="progress-bar progress-bar4 progress-bar-striped  bg-info" style="width: 80%;">
+
+                    </div>
+                </div><br>
+                <div class="section1 ml-5" style="width: 80%; height: 25px;  display: inline-block;">
+                    <sec style="width:50%; height: 25px; color: white; float: left;">Jquery</sec>
+                    <sec class="Count" style="width: 46%; height: 25px;  float: left; text-align: end; color: white;">75</sec>
+                    <sec style="float: left; color: white;">%</sec>
+                </div>
+                <div class="progress ml-5" style="width: 80%; height: 7px; background-color: black; ">
+                    <div class="progress-bar progress-bar5 progress-bar-striped  bg-info" style="width: 75%;">
+
+                    </div>
+                </div><br>
+                <div class="section1 ml-5" style="width: 80%; height: 25px;  display: inline-block;">
+                    <sec style="width:50%; height: 25px; color: white; float: left;">Angular 6</sec>
+                    <sec class="Count" style="width: 46%; height: 25px;  float: left; text-align: end; color: white;">85</sec>
+                    <sec style="float: left; color: white;">%</sec>
+                </div>
+                <div class="progress ml-5" style="width: 80%; height: 7px; background-color: black; ">
+                    <div class="progress-bar progress-bar6 progress-bar-striped  bg-info" style="width: 85%;">
+
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+    </div>
+</div>
+<div class="div4" id="div4">
+    <div class="sec4">
+        <h1 class="pt-5">MY <span style="color: cyan;">PORTFOLIOS</span></h1>
+        <hr class="horizontal1"><br>  
+        <div class="container">
+            <div class="section1">
+            <ul>
+              <li class="button active" data-filter="all">All</li>
+              <li class="button" data-filter="design">Design</li>
+              <li class="button" data-filter="bootstrap">Bootstrap</li>
+              <li class="button" data-filter="javascript">Javascript</li>
+              <li class="button" data-filter="angular">Angular</li>
+              <div style="clear:both;"></div>
+            </ul>
+            </div>
+        </div>
+        <div class="container container2">
+            <div class="row">
+                <div class="col-md-4 box filter design mt-3">
+                    <div class="img1">
+                        <img src="./video/anticq.png" alt="" width="100%" height="250px">
+                    </div>
+                    <div id="overlay1" class="overlay overlay1" onmouseover="hover1()" onmouseout="out1()">
+                        <a id="search1" href="./video/codexboss-min.png" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p1">Employee Portfolio</p>
+                        <p id="sp1" class="small">HTML5 + CSS3 + Git</p>
+                    </div>
+
+                </div>
+                <div class="col-md-4 box filter design mt-3">
+                    <div class="img2">
+                        <img src="./video/bitcoin.png" alt="" width="100%" height="250px">
+                    </div>
+                    <div class="overlay overlay2"  onmouseover="hover2()" onmouseout="out2()">
+                        <a id="search2"  href="./video/project_2.png" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p2">Trading Portfolio (Buy and Sell)</p>
+                            <p id="sp2" class="small">HTML5 + CSS3 + Git</p>
+                    </div>
+                </div>
+                <div class="col-md-4 box filter design mt-3">
+                    <div class="img3">
+                        <img src="./video/emertxe.png" alt="" width="100%" height="250px">
+                    </div>
+                    <div class="overlay overlay3"  onmouseover="hover3()" onmouseout="out3()">
+                        <a id="search3" href="./video/Emertxe_Newsletter_Final_Design.jpg" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p3">Newsletter Emertxe (IT Academy)</p>
+                            <p id="sp3" class="small">HTML5 + CSS3 + Git</p>
+                    </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-4 box filter bootstrap mt-3">
+                    <div class="img4">
+                        <img src="./video/granny.png" alt="" width="100%" height="250px">
+                    </div>
+                    <div class="overlay overlay4"  onmouseover="hover4()" onmouseout="out4()">
+                        <a  id="search4" href="./video/granny-min.png" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p4">Granny Restaurant</p>
+                        <p id="sp4" class="small">HTML5 + CSS3 + Bootstrap4 + Git</p>
+                    </div>
+                </div>
+                <div class="col-md-4 box filter bootstrap mt-3">
+                    <div class="img5">
+                        <img src="./video/apperle.png" alt="" width="100%" height="250px">
+                    </div>
+                    <div class="overlay overlay5"  onmouseover="hover5()" onmouseout="out5()">
+                        <a id="search5"  href="./video/apperle-min.png" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p5">Apperle Mobile Portfolio</p>
+                            <p id="sp5" class="small">HTML5 + CSS3 + Bootstrap4 + Git</p>
+                    </div>
+                </div>
+                <div class="col-md-4 box filter javascript mt-3">
+                    <div class="img6">
+                        <img src="./video/penguin.png" alt="" width="100%" height="250px">
+                    </div>
+                    <div class="overlay overlay6"  onmouseover="hover6()" onmouseout="out6()">
+                        <a id="search6" href="https://sushantkulkarni44.github.io/PenguinGame/" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p6">Penguin Game</p>
+                        <p id="sp6" class="small">javascript + Git</p>
+                    </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-4 box filter angular mt-3">
+                    <div class="img7">
+                        <img src="./video/todo_2.jpg" alt="" width="100%" height="250px">
+                    </div>
+                    <div class="overlay overlay7"  onmouseover="hover7()" onmouseout="out7()">
+                        <a id="search7" href="https://todolistdeployment.firebaseapp.com" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p7">Portfolio</p>
+                        <p id="sp7" class="small">Angular 6 + Firebase Cloud Firestore + Git</p>
+                    </div>
+                </div>
+                <div class="col-md-4 box filter angular mt-3">
+                    <div class="img8">
+                        <img src="./video/Screenshot (28).png" alt="" width="100%" height="250px">
+                    </div>
+                    <div class="overlay overlay8"  onmouseover="hover8()" onmouseout="out8()">
+                        <a id="search8" href="https://nameless-earth-90099.herokuapp.com" class="fa fa-search margin-20"></a><br><br><br><br>
+                        <p id="p8">Portfolio</p>
+                            <p id="sp8" class="small">Angular 6 + Heroku</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="div5" id="div5">
+    <div class="sec5">
+        <h1 class="pt-5">My <span style="color: cyan;">Service</span></h1>
+        <hr class="horizontal1"><br>  
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section1">
+                    <div class="icon_div">
+                        <img src="./video/gear.png" alt="">
+                        
+                    </div>
+                    <h3>UI Development</h3>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="section2">
+                    <div class="icon_div">
+                        <img src="./video/devices.png" alt="">
+                        
+                    </div>
+                    <h3>Responsive Design</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="div6" id="div6">
+    <div id="googleMap" style="width:100%;min-height:80vh;"></div>
+</div>
+<div class="div7">
+    <div class="row">
+    <div id="adress1" class="col-md-4">
+        
+        <h3>Our Adress</h3>
+        <p>#55, 2nd cross, 2nd stage KHB Colony Basaveshwara Nagar Bangalore</p>
+        <a href="">VEIW ON MAP</a>
+    </div>
+    <div id="contact" class="col-md-4  col-sm-8 offset-sm-2 offset-md-0">
+        <img id="img1"src="./shapes/diamond.png" alt="">
+        <h1>Get in Toutch</h1>
+        <img id="img3" src="./shapes/shape-11.png" alt="">
+        <section><a href="" class="fa fa-user" style="color: gray;"></a> <input type="text" placeholder="Name"></section>
+        <section><a href="" class="fa fa-user" style="color: gray;"></a> <input type="text" placeholder="Email"></section>
+        <section><a href="" class="fa fa-user" style="color: gray; transform: translateY(-90px);"></a> <textarea rows="2"  placeholder="Write Message"></textarea></section>
+        <div class="btn ml-5 mr-5">Send Message</div>
+        <img id="img2" src="./shapes/diamond.png" alt="">
+    </div>
+    <div id="adress2"  class="col-md-4 ">
+        <h3>Contact Us</h3>
+        <p>Email : sushantkulkarni44@gmail.com</p>
+        <p>Mobile : +91-9113690491</p>
+        <a href="">SEND A MESSAGE</a>
+    </div>
+</div>
+<div class="row row2">
+<section class="my-icon"> <a href="https://www.facebook.com/sushant.kulkarni.520" class="fab fa-facebook-f p-3" style="color:white;"></a> </section>
+<section class="my-icon"> <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvqKRQwRZZmgCQdZGMxVxXnTfPFZRXKCzDCMswqLLZRkztKHgwQTSkLZhfvzXprzZtLjHg" class="fas fa-envelope p-3" style="color: white;"></a> </section>
+<section class="my-icon"> <a href="" class="fab fa-instagram p-3" style="color: white;"></a> </section>
+<section class="my-icon"> <a href="" class="fab fa-linkedin-in p-3" style="color: white;"></a> </section>
+</div>
+</div>
+<div class="div8">
+    <img id="img3"src="./shapes/diamond.png" alt="">
+</div>
+
+<script>
+    // List of sentences
+var _CONTENT = [ 
+	"Front-End Web Developer....!", 
+	" Lives In Bangalore." 
+	
+];
+
+// Current sentence being processed
+var _PART = 0;
+
+// Character number of the current sentence being processed 
+var _PART_INDEX = 0;
+
+// Holds the handle returned from setInterval
+var _INTERVAL_VAL;
+
+// Element that holds the text
+var _ELEMENT = document.querySelector("#text");
+
+// Cursor element 
+var _CURSOR = document.querySelector("#cursor");
+
+// Implements typing effect
+function Type() { 
+	// Get substring with 1 characater added
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX++;
+
+	// If full sentence has been displayed then start to delete the sentence after some time
+	if(text === _CONTENT[_PART]) {
+		// Hide the cursor
+		_CURSOR.style.display = 'none';
+
+		clearInterval(_INTERVAL_VAL);
+		setTimeout(function() {
+			_INTERVAL_VAL = setInterval(Delete, 50);
+		}, 1000);
+	}
+}
+
+// Implements deleting effect
+function Delete() {
+	// Get substring with 1 characater deleted
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX--;
+
+	// If sentence has been deleted then start to display the next sentence
+	if(text === '') {
+		clearInterval(_INTERVAL_VAL);
+
+		// If current sentence was last then display the first one, else move to the next
+		if(_PART == (_CONTENT.length - 1))
+			_PART = 0;
+		else
+			_PART++;
+		
+		_PART_INDEX = 0;
+
+		// Start to display the next sentence after some time
+		setTimeout(function() {
+			_CURSOR.style.display = 'inline-block';
+			_INTERVAL_VAL = setInterval(Type, 100);
+		}, 200);
+	}
+}
+
+// Start the typing effect on load
+_INTERVAL_VAL = setInterval(Type, 100);
+
+$(document) .ready(function(){
+    $(".navbar-brand").mouseover(function(){
+        $(".navbar-brand").addClass("animate_1");
+    })
+})
+
+
+$(document).scroll(function(){
+    var a = $(this).scrollTop();
+    if(a>200)
+    {
+        $(".para1").addClass("animatea").fadeIn(2000);
+        $("#myphoto").addClass("animatec").fadeIn(2000);
+    }
+    else
+    {
+        $(".para1").fadeOut(1000);
+        $("#myphoto").fadeOut(1000);
+    }
+
+    if(a>600)
+    {
+        $(".my_details").addClass("animateb").fadeIn(2000);
+    }
+    else
+    {
+        $(".my_details").fadeOut(1000);
+    }
+
+    
+
+})
+
+$(document).scroll(function(){
+    var b = $(this).scrollTop();
+    if(b>800)
+    {
+        $(".progress-bar1").addClass("animated").fadeIn(1000);
+        $(".progress-bar2").addClass("animatee").fadeIn(1000);
+        $(".progress-bar3").addClass("animatef").fadeIn(1000);
+        $(".progress-bar4").addClass("animateg").fadeIn(1000);
+        $(".progress-bar5").addClass("animateh").fadeIn(1000);
+        $(".progress-bar6").addClass("animatei").fadeIn(1000);
+
+    }
+    else
+    {
+        $(".progress-bar").fadeOut(1000);
+    }
+    
+    
+})
+
+
+$(".Count").counterUp({delay:10,time:2000});
+
+
+
+
+$(document).ready(function(){
+      $(".button").click(function(){
+        var value = $(this).attr("data-filter");
+        if (value =="all")
+        {
+          $(".filter").show("10").addClass("scale1");
+        }
+        else
+        {""
+          $(".filter").not("."+value).hide("1000").addClass("scale2");
+          $(".filter").filter("."+value).show("10").addClass("scale1");
+        }
+        $("ul .button").click(function(){
+          $(this).addClass('active').siblings().removeClass('active');
+        })
+      })
+    })
+
+    function hover1()
+    {
+        document.getElementById("search1").style.color="white";
+        document.getElementById("p1").style.color = "white";
+        document.getElementById("sp1").style.color = "white";
+        
+    }
+    function out1()
+    {
+        document.getElementById("search1").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p1").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp1").style.color = "rgba(252, 252, 252, 0.0)";
+    }
+    function hover2()
+    {
+        document.getElementById("search2").style.color="white";
+        document.getElementById("p2").style.color = "white";
+        document.getElementById("sp2").style.color = "white";
+    }
+    function out2()
+    {
+        document.getElementById("search2").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p2").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp2").style.color = "rgba(252, 252, 252, 0.0)";
+        
+    }
+    function hover3()
+    {
+        document.getElementById("search3").style.color="white";
+        document.getElementById("p3").style.color = "white";
+        document.getElementById("sp3").style.color = "white";
+    }
+    function out3()
+    {
+        document.getElementById("search3").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p3").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp3").style.color = "rgba(252, 252, 252, 0.0)";
+    }
+    function hover4()
+    {
+        document.getElementById("search4").style.color="white";
+        document.getElementById("p4").style.color = "white";
+        document.getElementById("sp4").style.color = "white";
+    }
+    function out4()
+    {
+        document.getElementById("search4").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p4").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp4").style.color = "rgba(252, 252, 252, 0.0)";
+    }
+    function hover5()
+    {
+        document.getElementById("search5").style.color="white";
+        document.getElementById("p5").style.color = "white";
+        document.getElementById("sp5").style.color = "white";
+    }
+    function out5()
+    {
+        document.getElementById("search5").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p5").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp5").style.color = "rgba(252, 252, 252, 0.0)";
+    }
+    function hover6()
+    {
+        document.getElementById("search6").style.color="white";
+        document.getElementById("p6").style.color = "white";
+        document.getElementById("sp6").style.color = "white";
+    }
+    function out6()
+    {
+        document.getElementById("search6").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p6").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp6").style.color = "rgba(252, 252, 252, 0.0)";
+    }
+    function hover7()
+    {
+        document.getElementById("search7").style.color="white";
+        document.getElementById("p7").style.color = "white";
+        document.getElementById("sp7").style.color = "white";
+    }
+    function out7()
+    {
+        document.getElementById("search7").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p7").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp7").style.color = "rgba(252, 252, 252, 0.0)";
+    }
+    function hover8()
+    {
+        document.getElementById("search8").style.color="white";
+        document.getElementById("p8").style.color = "white";
+        document.getElementById("sp8").style.color = "white";
+    }
+    function out8()
+    {
+        document.getElementById("search8").style.color="rgba(252, 252, 252, 0.0)";
+        document.getElementById("p8").style.color = "rgba(252, 252, 252, 0.0)";
+        document.getElementById("sp8").style.color = "rgba(252, 252, 252, 0.0)";
+    }
+
+
+    function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(12.984618,77.538284),
+  zoom:16.5
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+
+
+
+// Navbar scrolling
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) 
+  {
+    document.getElementById("navbar").style.padding = "30px 30px";
+    document.getElementById("navbar").style.fontSize = "25px";
+    document.getElementById("navbar").style.backgroundColor = "rgba(4, 37, 90)";
+    document.getElementsByClassName("nav-link").style.color = "black";
+    
+  } 
+  else  
+  {
+    document.getElementById("navbar").style.padding = "10px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+    document.getElementById("navbar").style.backgroundColor = "rgba(4, 37, 90, 0)"
+    
+  }
+}
+
+</script>   
+
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7pjwcCEgbHYsS3TISDe9iiQgTA2irFwk&callback=myMap"></script>
+</html>
